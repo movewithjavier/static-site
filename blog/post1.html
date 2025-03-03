@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to deploy your static website to GitHub Pages for free hosting with your custom domain.">
+    <meta name="keywords" content="static site, GitHub Pages, free hosting, custom domain">
+    <meta name="author" content="Your Name">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="How to Deploy a Static Site to GitHub Pages | Static Site Demo">
+    <meta property="og:description" content="Learn how to deploy your static website to GitHub Pages for free hosting with your custom domain.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://yourdomain.com/blog/post1.html">
+    <meta property="article:published_time" content="2023-06-15T10:00:00+00:00">
+    
+    <title>How to Deploy a Static Site to GitHub Pages | Static Site Demo</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="blog.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="../index.html">Static Site Demo</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="index.html" class="active">Blog</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article class="single-post">
+            <div class="container">
+                <div class="post-header">
+                    <h1>How to Deploy a Static Site to GitHub Pages</h1>
+                    <div class="post-meta">Published on June 15, 2023 | By Your Name</div>
+                </div>
+                
+                <div class="post-featured-image">
+                    <img src="../images/post1.jpg" alt="How to Deploy a Static Site to GitHub Pages">
+                </div>
+                
+                <div class="post-body">
+                    <p>GitHub Pages is a free hosting service provided by GitHub that allows you to host static websites directly from your GitHub repository. This makes it an excellent choice for personal websites, project documentation, and landing pages. In this tutorial, we'll walk through the process of deploying a static site to GitHub Pages and connecting it to your custom domain.</p>
+                    
+                    <h2>Prerequisites</h2>
+                    <ul>
+                        <li>A GitHub account</li>
+                        <li>Git installed on your computer</li>
+                        <li>A static website (HTML, CSS, JavaScript)</li>
+                        <li>A custom domain (optional)</li>
+                    </ul>
+                    
+                    <h2>Step 1: Create a GitHub Repository</h2>
+                    <p>First, you need to create a new repository on GitHub. If you want to create a user or organization site, name your repository <code>username.github.io</code>, where "username" is your GitHub username or organization name.</p>
+                    
+                    <p>For a project site, you can use any name for your repository. Project sites will be available at <code>username.github.io/repository-name</code>.</p>
+                    
+                    <h2>Step 2: Prepare Your Static Site</h2>
+                    <p>Make sure your static site is ready for deployment. At a minimum, you should have an <code>index.html</code> file in the root of your project. This will be the homepage of your site.</p>
+                    
+                    <p>Your project structure might look something like this:</p>
+                    
+                    <pre><code>
+my-static-site/
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   └── main.js
+└── images/
+    └── hero-image.jpg
+                    </code></pre>
+                    
+                    <h2>Step 3: Push Your Code to GitHub</h2>
+                    <p>Now, you need to push your code to the GitHub repository you created. Open your terminal and run the following commands:</p>
+                    
+                    <pre><code>
+# Initialize a Git repository (if you haven't already)
+git init
+
+# Add all files to the repository
+git add .
+
+# Commit the changes
+git commit -m "Initial commit"
+
+# Add the remote GitHub repository
+git remote add origin https://github.com/username/repository-name.git
+
+# Push the code to GitHub
+git push -u origin main
+                    </code></pre>
+                    
+                    <p>Replace <code>username</code> and <code>repository-name</code> with your GitHub username and repository name.</p>
+                    
+                    <h2>Step 4: Configure GitHub Pages</h2>
+                    <p>Now that your code is on GitHub, you need to enable GitHub Pages:</p>
+                    
+                    <ol>
+                        <li>Go to your repository on GitHub</li>
+                        <li>Click on "Settings"</li>
+                        <li>Scroll down to the "GitHub Pages" section</li>
+                        <li>Under "Source", select the branch you want to deploy (usually "main" or "master")</li>
+                        <li>Click "Save"</li>
+                    </ol>
+                    
+                    <p>GitHub will provide you with a URL where your site is published (e.g., <code>https://username.github.io/repository-name</code>).</p>
+                    
+                    <h2>Step 5: Connect Your Custom Domain (Optional)</h2>
+                    <p>If you have a custom domain, you can connect it to your GitHub Pages site:</p>
+                    
+                    <ol>
+                        <li>In your repository's "Settings", scroll to the "GitHub Pages" section</li>
+                        <li>Under "Custom domain", enter your domain name (e.g., <code>www.example.com</code>)</li>
+                        <li>Click "Save"</li>
+                    </ol>
+                    
+                    <p>Next, you need to configure your domain's DNS settings. Go to your domain registrar's website and add the following records:</p>
+                    
+                    <p>For an apex domain (example.com):</p>
+                    <pre><code>
+A     @     185.199.108.153
+A     @     185.199.109.153
+A     @     185.199.110.153
+A     @     185.199.111.153
+                    </code></pre>
+                    
+                    <p>For a www subdomain:</p>
+                    <pre><code>
+CNAME     www     username.github.io
+                    </code></pre>
+                    
+                    <p>It may take up to 24 hours for DNS changes to propagate.</p>
+                    
+                    <h2>Step 6: Enable HTTPS (Recommended)</h2>
+                    <p>For security reasons, it's recommended to enable HTTPS for your site:</p>
+                    
+                    <ol>
+                        <li>In your repository's "Settings", scroll to the "GitHub Pages" section</li>
+                        <li>Check the "Enforce HTTPS" option</li>
+                    </ol>
+                    
+                    <p>Note that you may need to wait a few hours after setting up your custom domain before you can enable HTTPS.</p>
+                    
+                    <h2>Conclusion</h2>
+                    <p>Congratulations! You've successfully deployed your static site to GitHub Pages. Your site is now live and accessible to the world. Any changes you push to your repository will be automatically deployed to your site.</p>
+                    
+                    <p>GitHub Pages is a powerful and free way to host static websites. It's perfect for personal portfolios, project documentation, and simple landing pages. Combined with a static site generator like Jekyll, Hugo, or 11ty, you can create sophisticated websites without the need for a traditional content management system.</p>
+                </div>
+            </div>
+        </article>
+        
+        <section class="related-posts">
+            <div class="container">
+                <h2>Related Posts</h2>
+                <div class="posts-grid">
+                    <article class="post-card">
+                        <div class="post-image">
+                            <a href="post2.html">
+                                <img src="../images/post2.jpg" alt="The Benefits of Static Sites vs WordPress">
+                            </a>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-date">June 10, 2023</div>
+                            <h2><a href="post2.html">The Benefits of Static Sites vs WordPress</a></h2>
+                            <p>Compare the advantages and disadvantages of static sites and WordPress for different types of websites.</p>
+                            <a href="post2.html" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+                    
+                    <article class="post-card">
+                        <div class="post-image">
+                            <a href="post3.html">
+                                <img src="../images/post3.jpg" alt="Essential HTML and CSS for Beginners">
+                            </a>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-date">June 5, 2023</div>
+                            <h2><a href="post3.html">Essential HTML and CSS for Beginners</a></h2>
+                            <p>A beginner's guide to the basic HTML and CSS you need to know to create your first static website.</p>
+                            <a href="post3.html" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html">Static Site Demo</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Site Map</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="index.html">Blog</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/pages" target="_blank">GitHub Pages</a></li>
+                        <li><a href="https://www.netlify.com/" target="_blank">Netlify</a></li>
+                        <li><a href="https://vercel.com/" target="_blank">Vercel</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Static Site Demo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html> 
